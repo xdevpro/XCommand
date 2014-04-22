@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="XTestApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XTestApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:XCmd="using:XCommand"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="77*"/>
+        </Grid.RowDefinitions>
+        <TextBlock TextAlignment="Center"
+                   Margin="50"
+                   TextTrimming="WordEllipsis"
+                   FontFamily="Segoe UI Symbol" 
+                   TextWrapping="Wrap"
+                   FontSize="20">
+            This is a simple app to demonstrate how you can utilize XCommand libarary to perform Command and CommandParameter binding on most of the routedevents provided on UIElement level. Currently supported routed events are listed on detail description page. This libary provides very easy and convinent way of routed event Command/CommandParameter binding with any UI element without need to understand and remember any kind of naming convention. For example to bind on PointerCanceled, PointerCanceled.Command / PointerCanceled.CommandParameter is good to go for any UI element.
+        </TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Margin="20,30,20,0" VerticalAlignment="Top" Height="80" x:Name="XTextBlock"
+                   TextTrimming="WordEllipsis"
+                   FontFamily="Segoe UI Symbol" 
+                   TextWrapping="Wrap"
+                   FontSize="20"
+                   Foreground="{Binding FgColor, Mode=TwoWay}"
+                   XCmd:PointerMoved.Command="{Binding TextBlockPointerMovedCommand}"
+                   XCmd:PointerPressed.Command="{Binding TextBlockPointerPressedCommand}"
+                   XCmd:PointerExited.Command="{Binding TextBlockPointerExitedCommand}"    
+                   Text="{Binding Description, Mode=TwoWay}"></TextBlock>
+            <Grid Grid.Column="1" Background="{Binding BgColor, Mode=TwoWay}"
+                  XCmd:PointerMoved.Command="{Binding GridPointerMovedCommand}" 
+                  XCmd:PointerMoved.CommandParameter="{Binding ElementName=XTextBlock, Path=Text}"
+                  XCmd:PointerPressed.Command="{Binding GridPointerPressedCommand}"
+                  XCmd:PointerPressed.CommandParameter="{Binding ElementName=XTextBlock, Path=Text}"
+                  XCmd:PointerReleased.Command="{Binding GridPointerReleasedCommand}"
+                  XCmd:PointerReleased.CommandParameter="{Binding ElementName=XTextBlock, Path=Text}"
+                  XCmd:PointerExited.Command="{Binding GridPointerExitedCommand}"
+                  XCmd:PointerExited.CommandParameter="{Binding ElementName=XTextBlock, Path=Text}"
+                  >
+                <TextBlock TextTrimming="WordEllipsis" Foreground="Black"
+                   FontFamily="Segoe UI Symbol" 
+                   TextWrapping="Wrap"
+                   FontSize="30"
+                   Text="{Binding GridDescription, Mode=TwoWay}"></TextBlock>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
