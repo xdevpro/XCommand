@@ -1,6 +1,14 @@
-﻿using System.Windows.Input;
+﻿//*********************************************************
+//
+// Copyright XdevPro, Author: [Rukesh Shrestha]. All rights reserved.
+// This code can be utilize freely under the name of author.
+//
+//*********************************************************
+
+using System.Windows.Input;
 using Windows.UI.Xaml;
 
+//List of types named as routed event name that is exposed by UIElement
 namespace XCommand
 {
     public class DoubleTapped

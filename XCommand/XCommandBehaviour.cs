@@ -1,8 +1,16 @@
-﻿using System;
+﻿//*********************************************************
+//
+// Copyright XdevPro, Author: [Rukesh Shrestha]. All rights reserved.
+// This code can be utilize freely under the name of author.
+//
+//*********************************************************
+
+using System;
 using System.Windows.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Input;
 
+//Behaviour to handle the Command and CommandParameter of particular Event type
 namespace XCommand
 {
     public abstract class XCommandBehaviour
