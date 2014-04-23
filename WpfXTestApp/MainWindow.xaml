@@ -1,0 +1,51 @@
+﻿<Window x:Class="WpfXTestApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:XCmd="clr-namespace:WPFXCommand;assembly=WPFXCommand"
+        Title="MainWindow" Height="600" Width="900">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock TextAlignment="Center"
+                   Margin="50"
+                   FontFamily="Segoe UI Symbol" 
+                   TextWrapping="Wrap"
+                   FontSize="18">
+            This is a simple app to demonstrate how you can utilize XCommand libarary to perform Command and CommandParameter binding on most of the routedevents provided on UIElement level. Currently supported routed events are listed on readme page. This libary provides very easy and convinent way of routed event Command/CommandParameter binding with any UI element without need to understand and remember any kind of naming convention. For example to bind on MouseMove, MouseMove.Command / MouseMove.CommandParameter is good to go for any UI element.
+        </TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Margin="20,30,20,0" VerticalAlignment="Top" Height="80" x:Name="XTextBlock"
+                   TextTrimming="WordEllipsis"
+                   FontFamily="Segoe UI Symbol" 
+                   TextWrapping="Wrap"
+                   FontSize="20"
+                   Foreground="{Binding FgColor, Mode=TwoWay}"
+                   XCmd:MouseMove.Command="{Binding TextBlockPointerMovedCommand}"
+                   XCmd:MouseLeftButtonDown.Command="{Binding TextBlockPointerPressedCommand}"
+                   XCmd:MouseLeave.Command="{Binding TextBlockPointerExitedCommand}"    
+                   Text="{Binding Description, Mode=TwoWay}"></TextBlock>
+            <Grid Grid.Column="1" Background="{Binding BgColor, Mode=TwoWay}"
+                  XCmd:MouseMove.Command="{Binding GridPointerMovedCommand}" 
+                  XCmd:MouseMove.CommandParameter="{Binding ElementName=XTextBlock, Path=Text}"
+                  XCmd:MouseLeftButtonDown.Command="{Binding GridPointerPressedCommand}"
+                  XCmd:MouseLeftButtonDown.CommandParameter="{Binding ElementName=XTextBlock, Path=Text}"
+                  XCmd:MouseLeftButtonUp.Command="{Binding GridPointerReleasedCommand}"
+                  XCmd:MouseLeftButtonUp.CommandParameter="{Binding ElementName=XTextBlock, Path=Text}"
+                  XCmd:MouseLeave.Command="{Binding GridPointerExitedCommand}"
+                  XCmd:MouseLeave.CommandParameter="{Binding ElementName=XTextBlock, Path=Text}"
+                  >
+                <TextBlock TextTrimming="WordEllipsis" Foreground="Black"
+                   FontFamily="Segoe UI Symbol" 
+                   TextWrapping="Wrap"
+                   FontSize="30"
+                   Text="{Binding GridDescription, Mode=TwoWay}"></TextBlock>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
