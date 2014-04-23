@@ -10,16 +10,15 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="19*"/>
-            <RowDefinition Height="77*"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock TextAlignment="Center"
                    Margin="50"
-                   TextTrimming="WordEllipsis"
                    FontFamily="Segoe UI Symbol" 
                    TextWrapping="Wrap"
                    FontSize="20">
-            This is a simple app to demonstrate how you can utilize XCommand libarary to perform Command and CommandParameter binding on most of the routedevents provided on UIElement level. Currently supported routed events are listed on detail description page. This libary provides very easy and convinent way of routed event Command/CommandParameter binding with any UI element without need to understand and remember any kind of naming convention. For example to bind on PointerCanceled, PointerCanceled.Command / PointerCanceled.CommandParameter is good to go for any UI element.
+            This is a simple app to demonstrate how you can utilize XCommand libarary to perform Command and CommandParameter binding on most of the routedevents provided on UIElement level. Currently supported routed events are listed on readme page. This libary provides very easy and convinent way of routed event Command/CommandParameter binding with any UI element without need to understand and remember any kind of naming convention. For example to bind on PointerCanceled, PointerCanceled.Command / PointerCanceled.CommandParameter is good to go for any UI element.
         </TextBlock>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
