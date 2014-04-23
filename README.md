@@ -1,6 +1,6 @@
 XCommand
 ========
-XCommand and WPFXCommand are Windows 8 Store and Windows desktop application libararies that provides Command and CommandParameter binding on most of the routed events exposes on UIElement level. Here are the list of current supported routed events for Command/CommandParameter binding as below:
+XCommand and WPFXCommand are Windows 8 Store and Windows desktop application class libraries that provides Command and CommandParameter binding for most of the routed events exposes on UIElement level. Here are the list of current supported routed events for Command/CommandParameter binding as below:
 
 Windows 8 Store app                                                                                               
 ---------------------                                                                                                 
