@@ -69,4 +69,4 @@ It is very simple to utilize these command behaviour on any UI element. And no n
 convensiton here. For example PointerMoved has two properties that are Command and CommandParameter.		
 Please find out the sample XTextApp for Windows 8 Store app and WPFXTextApp for WPF Windows desktop application that will demonstrate how to utilize XCommand. 		
 
-Hope this will help you to get ride of event based code behind.	Enjoy, Keep coding :)	
+Hope this will help you to get rid of event based code behind.	Enjoy, Keep coding :)	
