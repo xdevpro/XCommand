@@ -57,7 +57,7 @@ WPF Windows Desktop application
 -> PreviewMouseUp                                                                                                  
 -> PreviewMouseWheel                                                                                                  
 
-These are valid for every windows 8 store and windows desktop WPF UI elements that inherit from UIElement.			
+These are valid for any windows 8 store and windows desktop WPF UI elements that inherit from UIElement.			
 For example to utilize these routed event based Command and CommandParameter for Grid			
 
 xmlns:XCmd="using:XCommand"
@@ -66,7 +66,7 @@ XCmd:PointerMoved.Command="{Binding GridPointerMovedCommand}"
 XCmd:PointerMoved.CommandParameter="{Binding ElementName=XTextBlock, Path=Text}"		
 
 It is very simple to utilize these command behaviour on any UI element. And no need to remember any kind of naming	
-convensiton here. For example PointerMoved has two properties that is Command and CommandParameter.		
+convensiton here. For example PointerMoved has two properties that are Command and CommandParameter.		
 Please find out the sample XTextApp for Windows 8 Store app and WPFXTextApp for WPF Windows desktop application that will demonstrate how to utilize XCommand. 		
 
 Hope this will help you to get ride of event based code behind.	Enjoy, Keep coding :)	
