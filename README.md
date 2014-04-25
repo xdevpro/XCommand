@@ -58,7 +58,8 @@ WPF Windows Desktop application
 -> PreviewMouseWheel                                                                                                  
 
 
-How to implement XCommand for Windows Desktop Application                                                           
+How to implement XCommand for Windows Desktop Application                                                        
+--------------------------------------------------------------
 Add WPFXCommand.dll as reference to your desire project.                                                          
 
 Add the namespace on your xaml file as below:                                                                     
@@ -71,6 +72,7 @@ XCmd:MouseMove.CommandParameter="{Binding ElementName=XTextBlock, Path=Text}"
 
 
 How to implement XCommand for Windows 8 Store Application                                                           
+----------------------------------------------------------------
 Add XCommand.dll as reference to your desire project.                                                                 
 
 Add the namespace on your xaml file as below:                                                                       
