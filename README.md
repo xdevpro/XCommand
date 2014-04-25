@@ -58,27 +58,27 @@ WPF Windows Desktop application
 -> PreviewMouseWheel                                                                                                  
 
 
-How to implement XCommand for Windows Desktop Application
-Add WPFXCommand.dll as reference to your desire project.
+How to implement XCommand for Windows Desktop Application                                                           
+Add WPFXCommand.dll as reference to your desire project.                                                          
 
-Add the namespace on your xaml file as below:
-xmlns:XCmd="clr-namespace:WPFXCommand;assembly=WPFXCommand"
+Add the namespace on your xaml file as below:                                                                     
+xmlns:XCmd="clr-namespace:WPFXCommand;assembly=WPFXCommand"                                                         
 
-Now, you can bind Command and CommandParameter to any available events on any UI element inherit from WPF UIElement as below:
-XCmd:MouseMove.Command="{Binding GridPointerMovedCommand}"
-XCmd:MouseMove.CommandParameter="{Binding ElementName=XTextBlock, Path=Text}"
+Now, you can bind Command and CommandParameter to any available events on any UI element inherit from WPF UIElement as below:                                                                                                              
+XCmd:MouseMove.Command="{Binding GridPointerMovedCommand}"                                                        
+XCmd:MouseMove.CommandParameter="{Binding ElementName=XTextBlock, Path=Text}"                                         
 
 
 
-How to implement XCommand for Windows 8 Store Application
-Add XCommand.dll as reference to your desire project.
+How to implement XCommand for Windows 8 Store Application                                                           
+Add XCommand.dll as reference to your desire project.                                                                 
 
-Add the namespace on your xaml file as below:
-xmlns:XCmd="using:XCommand"
+Add the namespace on your xaml file as below:                                                                       
+xmlns:XCmd="using:XCommand"                                                                                       
 
-Now, you can bind Command and CommandParameter to any available events on any UI element inherit from WPF UIElement as below:
-XCmd:PointerMoved.Command="{Binding GridPointerMovedCommand}" 
-XCmd:PointerMoved.CommandParameter="{Binding ElementName=XTextBlock, Path=Text}"
+Now, you can bind Command and CommandParameter to any available events on any UI element inherit from WPF UIElement as below:                                                                                                            
+XCmd:PointerMoved.Command="{Binding GridPointerMovedCommand}"                                                 
+XCmd:PointerMoved.CommandParameter="{Binding ElementName=XTextBlock, Path=Text}"                                    
 
 
 These are valid for any windows 8 store and windows desktop WPF UI elements that inherit from UIElement.			
