@@ -83,6 +83,8 @@ XCmd:PointerMoved.Command="{Binding GridPointerMovedCommand}"
 XCmd:PointerMoved.CommandParameter="{Binding ElementName=XTextBlock, Path=Text}"                                    
 
 
+Summary                                                                                                     
+------------
 These are valid for any windows 8 store and windows desktop WPF UI elements that inherit from UIElement.			
 
 It is very simple to utilize these command behaviour on any UI element. And no need to remember any kind of naming	
