@@ -2,18 +2,18 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:XCmd="clr-namespace:WPFXCommand;assembly=WPFXCommand"
-        Title="MainWindow" Height="550" Width="925">
-    <Grid Background="LightBlue">
+        Title="MainWindow" Height="600" Width="900">
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="250"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock TextAlignment="Center"
-                   Margin="20"
+                   Margin="50"
                    FontFamily="Segoe UI Symbol" 
                    TextWrapping="Wrap"
                    FontSize="18">
-            This is a simple app to demonstrate how you can utilize WPFXCommand libarary to perform Command and CommandParameter binding on most of the routedevents provided on UIElement level. Currently supported routed events are listed on readme page. This libary provides very easy and convinent way of routed event Command/CommandParameter binding with any UI element without need to understand and remember any kind of naming convention. For example to bind on MouseMove, MouseMove.Command / MouseMove.CommandParameter is good to go for any UI element.
+            This is a simple app to demonstrate how you can utilize XCommand libarary to perform Command and CommandParameter binding on most of the routedevents provided on UIElement level. Currently supported routed events are listed on readme page. This libary provides very easy and convinent way of routed event Command/CommandParameter binding with any UI element without need to understand and remember any kind of naming convention. For example to bind on MouseMove, MouseMove.Command / MouseMove.CommandParameter is good to go for any UI element.
         </TextBlock>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -28,7 +28,7 @@
                    Foreground="{Binding FgColor, Mode=TwoWay}"
                    XCmd:MouseMove.Command="{Binding TextBlockPointerMovedCommand}"
                    XCmd:MouseLeftButtonDown.Command="{Binding TextBlockPointerPressedCommand}"
-                   XCmd:MouseLeftButtonUp.Command="{Binding TextBlockPointerExitedCommand}"    
+                   XCmd:MouseLeave.Command="{Binding TextBlockPointerExitedCommand}"    
                    Text="{Binding Description, Mode=TwoWay}"></TextBlock>
             <Grid Grid.Column="1" Background="{Binding BgColor, Mode=TwoWay}"
                   XCmd:MouseMove.Command="{Binding GridPointerMovedCommand}" 
